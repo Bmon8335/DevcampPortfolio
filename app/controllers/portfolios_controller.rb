@@ -8,7 +8,7 @@ class PortfoliosController < ApplicationController
     end
 
   def show
-    
+    @portfolio_item = Portfolio.find(params[:id])
   end
   def create
     @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
@@ -37,6 +37,15 @@ class PortfoliosController < ApplicationController
         format.html { render :edit }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  def destroy
+    @portfolio_item = Portfolio.find(params[:id])
+    
+    @portfolio_item.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'The record was successfully destroyed.' }
     end
   end
 end
