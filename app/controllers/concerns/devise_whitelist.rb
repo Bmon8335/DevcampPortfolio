@@ -1,8 +1,8 @@
 module DeviseWhitelist
   extend ActiveSupport::Concern
   
-  inlcuded do 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  included do 
+     before_filter :configure_permitted_parameters, if: :devise_controller?
   end
   
   def configure_permitted_parameters
