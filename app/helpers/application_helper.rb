@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+  
+  def copyright_generator
+    MontagueViewTool::Renderer.copyright 'Broderic Montague (RC)', 'All rights reserved'
+  end
 end

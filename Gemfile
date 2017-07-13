@@ -56,3 +56,5 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'devise', '~> 4.3'
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+
+gem 'montague_view_tool', git: 'https://github.com/Bmon8335/montague_view_tool'
